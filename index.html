@@ -1,75 +1,87 @@
-<div class="container">
-<div class="cube" id="cube1" onclick="showIframe(1)">
-  <span>Հացահատիկ</span>
-</div>
-
-  <div class="cube" id="cube2" onclick="showIframe(2)"></div>
-  <div class="cube" id="cube3" onclick="showIframe(3)"></div>
-  <div class="cube" id="cube4" onclick="showIframe(4)"></div>
-  <div class="cube" id="cube5" onclick="showIframe(5)"></div>
-  <div class="cube" id="cube6" onclick="showIframe(6)"></div>
-</div>
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.cube {
-  width: 200px;
-  height: 200px;
-  margin: 10px;
-}
-
-#cube1 span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 20px;
-    color: white;
-}
-
-.cube:nth-child(1) {
-  background-color: #ff0000;
-}
-
-.cube:nth-child(2) {
-  background-color: #00ff00;
-}
-
-.cube:nth-child(3) {
-  background-color: #0000ff;
-}
-
-.cube:nth-child(4) {
-  background-color: #ffff00;
-}
-
-.cube:nth-child(5) {
-  background-color: #ff00ff;
-}
-
-.cube:nth-child(6) {
-  background-color: #00ffff;
-}
-
-var iframe = document.createElement("iframe");
-iframe.style.display = "none";
-document.body.appendChild(iframe);
-
-function showIframe(cubeNumber) {
-  var url = "";
-  switch (cubeNumber) {
-    case 1:
-      url = "https://www.example1.com";
-      break;
-    case 2:
-      url = "https://www.example2.com";
-      break;
-    case 3:
-      url = "https://www.example3.com";
-      break;
-    case 4:
-      url = "https://www.example4.com
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    /* CSS code goes here */
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cube {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+    }
+    .cube:nth-child(1) {
+        background-color: #ff0000;
+    }
+    .cube:nth-child(2) {
+        background-color: #00ff00;
+    }
+    .cube:nth-child(3) {
+        background-color: #0000ff;
+    }
+    .cube:nth-child(4) {
+        background-color: #ffff00;
+    }
+    .cube:nth-child(5) {
+        background-color: #ff00ff;
+    }
+    .cube:nth-child(6) {
+        background-color: #00ffff;
+    }
+    #cube1 {
+        background-image: url('path/to/corn-image.jpg');
+        background-size: cover;
+    }
+    #cube1::before {
+        content: "Հացահատիկ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 20px;
+        color: white;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="cube" id="cube1" onclick="showIframe(1)"></div>
+        <div class="cube" id="cube2" onclick="showIframe(2)"></div>
+        <div class="cube" id="cube3" onclick="showIframe(3)"></div>
+        <div class="cube" id="cube4" onclick="showIframe(4)"></div>
+        <div class="cube" id="cube5" onclick="showIframe(5)"></div>
+        <div class="cube" id="cube6" onclick="showIframe(6)"></div>
+    </div>
+   <script>
+    var iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    document.body.appendChild(iframe);
+    function showIframe(cubeNumber) {
+        var url = "";
+        switch (cubeNumber) {
+            case 1:
+                url = "https://www.example1.com";
+                break;
+            case 2:
+                url = "https://www.example2.com";
+                break;
+            case 3:
+                url = "https://www.example3.com";
+                break;
+            case 4:
+                url = "https://www.example4.com"
+                break;
+            case 5:
+                url = "https://www.example5.com"
+                break;
+            case 6:
+                url = "https://www.example6.com"
+                break;
+        }
+        iframe.src = url;
+        iframe.style.display = "block";
+    }
+</script>
